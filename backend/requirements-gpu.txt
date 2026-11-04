@@ -1,9 +1,9 @@
 # Optional neural stack (installed in the CUDA image target). Enable via ENABLE_* flags in .env
-torch>=2.3
-torchvision>=0.18
-open_clip_torch>=2.24
-easyocr>=1.7
-transformers>=4.42
-diffusers>=0.29
-onnxruntime-gpu>=1.18
-mediapipe>=0.10
+torch>=2.15.0
+torchvision>=0.29.2
+open_clip_torch>=3.3.0
+easyocr>=1.7.2
+transformers>=5.22.1
+diffusers>=0.42.1
+onnxruntime-gpu>=1.31.1
+mediapipe>=1.2.0
