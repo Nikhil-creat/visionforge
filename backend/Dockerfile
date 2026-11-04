@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip wheel --no-cache-dir -r requirements.txt -w /wheels
 
 # ---------- GPU runtime (opt-in) ----------
-FROM nvidia/cuda:12.1.1-cudnn8-runtime-ubuntu22.04 AS gpu
+FROM nvidia/cuda:12.2.2-cudnn8-runtime-ubuntu22.04 AS gpu
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 DATA_DIR=/data DEBIAN_FRONTEND=noninteractive \
     ENABLE_CLIP=true ENABLE_OCR=true
 RUN apt-get update && apt-get install -y --no-install-recommends python3.10 python3-pip libglib2.0-0 libgl1 \
