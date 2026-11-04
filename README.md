@@ -1,5 +1,7 @@
 # VisionForge Enterprise v2
 
+[![CI](https://github.com/Nikhil-creat/visionforge/actions/workflows/ci.yml/badge.svg)](https://github.com/Nikhil-creat/visionforge/actions) ![License](https://img.shields.io/badge/license-MIT-blue) ![Python](https://img.shields.io/badge/python-3.11-blue) ![Next.js](https://img.shields.io/badge/Next.js-15-black)
+
 A futuristic, catalogue-style AI image-intelligence platform and portfolio: CNN-style diagnostics, an agentic planner (LangGraph), RAG (Qdrant), a **multi-assistant council** (Groq + Gemini, judged consensus), guardrails, a tamper-evident audit ledger, and a themeable dot-matrix UI.
 
 | Area | Highlights |
@@ -14,5 +16,7 @@ Quick start: `cp .env.example .env && docker compose up --build` → http://loca
 
 Docs: [Deploy (GitHub + free hosting)](docs/DEPLOY.md) · [Customize palettes/animations](docs/CUSTOMIZE.md) · [Security](docs/SECURITY.md).
 Tests: `cd backend && pip install -r requirements.txt -r requirements-dev.txt && pytest`.
+
+[Architecture](docs/ARCHITECTURE.md) · [Contributing](CONTRIBUTING.md) · [Changelog](CHANGELOG.md) · [Security policy](SECURITY.md)
 
 MIT licensed.
