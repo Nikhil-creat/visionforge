@@ -1,0 +1,8 @@
+# Netlify: static export of the Next.js site. Set NEXT_PUBLIC_API_URL in Site settings -> Environment variables.
+[build]
+  base = "frontend"
+  command = "npm install --no-audit --no-fund && npm run export"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"

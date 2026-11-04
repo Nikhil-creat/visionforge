@@ -1,0 +1,13 @@
+# Overlay for NVIDIA hosts:  BACKEND_TARGET=gpu docker compose -f docker-compose.yml -f docker-compose.gpu.yml up --build
+x-gpu: &gpu
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: 1
+            capabilities: [gpu]
+
+services:
+  api: *gpu
+  worker: *gpu
