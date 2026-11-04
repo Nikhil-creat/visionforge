@@ -1,6 +1,20 @@
 version: 2
+# Grouped, minor/patch only: major bumps (TypeScript, Pillow, CUDA base image...) can break the build, so upgrade those by hand.
 updates:
-  - { package-ecosystem: pip, directory: /backend, schedule: { interval: weekly } }
-  - { package-ecosystem: npm, directory: /frontend, schedule: { interval: weekly } }
-  - { package-ecosystem: github-actions, directory: /, schedule: { interval: monthly } }
-  - { package-ecosystem: docker, directory: /backend, schedule: { interval: monthly } }
+  - package-ecosystem: pip
+    directory: /backend
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 2
+    ignore: [{ dependency-name: "*", update-types: ["version-update:semver-major"] }]
+    groups: { python-deps: { patterns: ["*"] } }
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 2
+    ignore: [{ dependency-name: "*", update-types: ["version-update:semver-major"] }]
+    groups: { js-deps: { patterns: ["*"] } }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 2
+    groups: { actions: { patterns: ["*"] } }
